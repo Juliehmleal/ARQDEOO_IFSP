@@ -21,7 +21,9 @@ public class GerenciadorIngresso {
 
     private static final int LIMITE_SETOR = 10;
 
-    public boolean comprarIngresso(Ingresso ingresso){
+    public synchronized boolean comprarIngresso(Ingresso ingresso){
+
+        Thread.currentThread().getName();
 
         long totalSetor = ingressos.stream()
                 .filter(i -> i.getSetor().equals(ingresso.getSetor()))
