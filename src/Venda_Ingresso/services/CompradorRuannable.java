@@ -1,4 +1,4 @@
-package Venda_Ingresso.entities;
+package Venda_Ingresso.services;
 
 public class CompradorRuannable implements Runnable {
     @Override
