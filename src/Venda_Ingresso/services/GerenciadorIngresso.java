@@ -23,7 +23,6 @@ public class GerenciadorIngresso {
 
     public synchronized boolean comprarIngresso(Ingresso ingresso){
 
-        Thread.currentThread().getName();
 
         long totalSetor = ingressos.stream()
                 .filter(i -> i.getSetor().equals(ingresso.getSetor()))
@@ -33,7 +32,12 @@ public class GerenciadorIngresso {
             throw new SetorEsgotadoException("Setor esgotado");
         }
 
+
+
         ingresso.setCodigo(++prox);
+
+        ingresso.setThreadOrigem(Thread.currentThread().getName());
+
         ingressos.add(ingresso);
 
         return true;

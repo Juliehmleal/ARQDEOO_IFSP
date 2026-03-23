@@ -15,6 +15,15 @@ public class Ingresso implements Serializable {
     private int quantidade;
     private double valorTotal;
     private String dataHora;
+    private transient String threadOrigem;
+
+    public String getThreadOrigem() {
+        return threadOrigem;
+    }
+
+    public void setThreadOrigem(String threadOrigem) {
+        this.threadOrigem = threadOrigem;
+    }
 
     public Ingresso() {}
 
